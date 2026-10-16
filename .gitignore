@@ -1,0 +1,25 @@
+﻿# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables (never commit real credentials)
+.env
+**/.env
+
+# SQLite database files (created at runtime)
+backend/data/
+
+# Test coverage reports
+coverage/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+*.suo
+*.user
