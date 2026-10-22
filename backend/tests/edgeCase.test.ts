@@ -1,16 +1,3 @@
-/**
- * Edge-case and security tests for the OpenFabric authorization service.
- *
- * Covers:
- *   A. Request-validation and input hygiene
- *   B. JWT security (mocked - no live Cognito dependency)
- *   C. Wildcard and resource-boundary attacks
- *   D. Permission-precedence scenarios
- *   E. HTTP method mapping completeness
- *   F. Database / failure scenarios (via mocks)
- *   G. HTTP security and API behaviour
- *   H. Resource path normalisation edge cases
- */
 
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import request from "supertest";

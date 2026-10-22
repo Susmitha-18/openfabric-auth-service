@@ -7,7 +7,7 @@ import type {
 import type { PermissionAction } from "../utils/httpMethodMapper.js";
 
 /**
- * Fetch all permissions assigned to a specific user.
+ * Fetch only active permissions assigned to a specific user.
  */
 export function getPermissionsByUserId(
   userId: string
@@ -20,6 +20,10 @@ export function getPermissionsByUserId(
     SELECT user_id, action, resource, effect
     FROM user_permissions
     WHERE user_id = ?
+      AND (
+        expires_at IS NULL
+        OR datetime(expires_at) > datetime('now')
+      )
     ORDER BY id ASC
   `);
 
